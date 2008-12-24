@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+abort("Usage: turl 'url'") unless ARGV.length == 1
+
+require File.dirname(__FILE__)+'/../lib/tiny_url'
+puts TinyUrl.create(ARGV[0])

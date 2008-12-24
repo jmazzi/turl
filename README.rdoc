@@ -1,0 +1,7 @@
+= Turl
+
+This is a CLI for generating tinyurls.
+
+== Usage:
+  
+  $ turl "http://example.com"
