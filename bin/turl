@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby
 
-abort("Usage: turl 'url'") unless ARGV.length == 1
-
+abort("Usage: turl 'url'") if ARGV.length == 0
 require File.dirname(__FILE__)+'/../lib/tiny_url'
-puts TinyUrl.create(ARGV[0])
+require 'optparse' 
+
+options = {}
+opts = OptionParser.new
+opts.on('-c', '--copy-to-clipboard')    {  options[:copy] = true }
+opts.parse!()
+
+output = TinyUrl.create(ARGV.last, options[:copy])
+puts output if output
